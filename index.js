@@ -1,12 +1,5 @@
-const express = require('express')
-const app = express()
-
-app.get('/', (req, res) => {
-  res.json({
-    msg: "Hello World"
-  })
+const server = require('./server')
+const PORT = process.env.PORT || 4000
+server.listen(PORT, () => {
+    console.log(`This app running on http://localhost:${PORT}`)
 })
-
-const PORT = 3000
-
-app.listen(PORT, () => console.log(`App running on PORT ${PORT}`))
