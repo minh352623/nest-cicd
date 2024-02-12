@@ -23,10 +23,10 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
-        port: 22
+        port: 23465
         script: |
-          cd ~/home/danielwetan/apps/node1
-          git pull origin master
+          cd ~/solana/nest-cicd
+          git pull origin main
           git status
           npm install --only=prod
-          pm2 restart node1
+          docker restart nest-cicd
